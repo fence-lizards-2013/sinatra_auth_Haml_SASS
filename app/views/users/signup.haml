@@ -1,0 +1,23 @@
+.container
+  %h1 Sign In
+  -if @errors
+    .errors
+      %ul
+        - @errors.each do |error|
+          %li{:style => "color: red;"}
+            = error
+
+  %form#sign_in{:action => "/signup", :method => 'post'}
+    %label.label{:for => "username"} Username
+    %input{:type => "text", :name => 'user[username]', :value => "#{@user.username if @errors}"}/
+    %br/
+    %label.label{:for => "email"} Email
+    %input{:type => "text", :name => 'user[email]', :value => "#{@user.email if @errors}"}/
+    %br/
+    %label.label{:for => "password"} Password
+    %input{:type => "password", :name => 'user[password'}/
+    %br/
+    %label.label{:for => "password_confirmation"} Password Confirmation
+    %input{:type => "password", :name => 'user[password_confirmation]'}/
+    %br/
+    %button{:type => 'submit'} Submit

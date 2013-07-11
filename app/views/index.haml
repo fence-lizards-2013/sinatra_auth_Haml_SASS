@@ -1,0 +1,11 @@
+.container
+  %h1 Welcome To Sinatra
+  %p
+    Hello World FROM HAML
+
+  %a{:href => "/login"} Log In
+  %br/
+  %a{:href => "/signup"} Sign Up
+  %br/
+  -if current_user
+    %a{:href => "/logout"} Log out

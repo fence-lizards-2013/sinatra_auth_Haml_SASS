@@ -1,0 +1,16 @@
+.container
+  %h1 Sign In
+  -if @error
+    .errors
+      %p{:style => 'color: red;'}
+        = @error
+
+  %form#sign_in{:action => "/login", :method => 'post'}
+    %label.label{:for => "username"} Username
+    %input{:type => "text", :name => 'username', :value => "#{@user.username if @user}"}/
+    %br/
+    %label.label{:for => "password"} Password
+    %input{:type => "password", :name => 'password'}/
+    %br/
+    %button{:type => 'submit'} Log in
+
